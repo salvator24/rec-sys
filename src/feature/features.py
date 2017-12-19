@@ -22,7 +22,7 @@ class Features(object):
         '''constructor'''
     
     def extract_data(self):
-        '''extract movie liked by users as a sequence'''
+        '''extract movie liked by users as a sequence and saving it'''
 
         # load CSV file
         ratings_df = pd.read_csv(os.path.join(data_dir, 'raw/ml-20m/ratings.csv'))
@@ -45,7 +45,7 @@ class Features(object):
         print (movie_list[:5])
 
     def build_embeddings(self):
-        '''build movie embeddings'''
+        '''build movie embeddings and saving it'''
 
         # load movie_list data
         with open(os.path.join(data_dir, 'interim/movie_list.pkl'), 'rb') as f:
